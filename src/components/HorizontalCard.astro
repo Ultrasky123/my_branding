@@ -2,6 +2,7 @@
 const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
 import { Image } from "astro:assets";
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
+const isVideo = img.endsWith('.mp4') || img.endsWith('.webm') || img.endsWith('.avi');
 ---
 
 <div
@@ -11,6 +12,12 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
     <div class="hero-content flex-col md:flex-row">
       {
         img && (
+          isVideo ? (
+            <video autoplay muted loop class="max-w-full md:max-w-[20rem] rounded-lg object-cover">
+            <source src={img} type="video/mp4" />
+            Your browser does not support the video tag.
+            </video>
+          ) : (
           <Image
             src={img}
             width={750}
@@ -20,6 +27,7 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
             class="max-w-full md:max-w-[13rem] rounded-lg"
           />
         )
+      )
       }
       <div class="grow w-full">
         <h1 class="text-xl font-bold">

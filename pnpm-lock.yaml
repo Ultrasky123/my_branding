@@ -29,6 +29,9 @@ importers:
       dayjs:
         specifier: ^1.11.9
         version: 1.11.13
+      ffmpeg:
+        specifier: ^0.0.4
+        version: 0.0.4
       pnpm:
         specifier: ^10.4.0
         version: 10.4.0
@@ -1071,6 +1074,9 @@ packages:
 
   fastq@1.19.0:
     resolution: {integrity: sha512-7SFSRCNjBQIZH/xZR3iy5iQYR8aGBE0h3VG6/cwlbrpdciNYBMotQav8c1XI3HjHH+NikUpP53nPdlZSdWmFzA==}
+
+  ffmpeg@0.0.4:
+    resolution: {integrity: sha512-3TgWUJJlZGQn+crJFyhsO/oNeRRnGTy6GhgS98oUCIfZrOW5haPPV7DUfOm3xJcHr5q3TJpjk2GudPutrNisRA==}
 
   fill-range@7.1.1:
     resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
@@ -2237,6 +2243,9 @@ packages:
 
   web-namespaces@2.0.1:
     resolution: {integrity: sha512-bKr1DkiNa2krS7qxNtdrtHAmzuYGFQLiQ13TsorsdT6ULTkPLKuu5+GsFpDlg6JFjUTwX2DyhMPG2be8uPrqsQ==}
+
+  when@3.7.8:
+    resolution: {integrity: sha512-5cZ7mecD3eYcMiCH4wtRPA5iFJZ50BJYDfckI5RRpQiktMiYTcn0ccLTZOvcbBume+1304fQztxeNzNS9Gvrnw==}
 
   which-pm-runs@1.1.0:
     resolution: {integrity: sha512-n1brCuqClxfFfq/Rb0ICg9giSZqCS+pLtccdag6C2HyufBrh3fBOiy9nb6ggRMvWOVH5GrdJskj5iGTZNxd7SA==}
@@ -3421,6 +3430,10 @@ snapshots:
   fastq@1.19.0:
     dependencies:
       reusify: 1.0.4
+
+  ffmpeg@0.0.4:
+    dependencies:
+      when: 3.7.8
 
   fill-range@7.1.1:
     dependencies:
@@ -5107,6 +5120,8 @@ snapshots:
       vite: 5.4.14
 
   web-namespaces@2.0.1: {}
+
+  when@3.7.8: {}
 
   which-pm-runs@1.1.0: {}
 

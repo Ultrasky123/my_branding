@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+---
+
+<BaseLayout sideBarActiveItemID="demo-ikan">
+  <div class="mb-5">
+    <div class="text-5xl w-full text-center font-bold">Klasifikasi Jenis Kelamin Ikan Nila</div>
+  </div>
+
+  <div class="mb-10 text-justify">
+    Riset ini dilakukan untuk memenuhi syarat tugas besar mata kuliah Artificial Intelligence. Durasi pengerjaan selama 1 bulan.
+    Pada riset ini digunakan metode SVM dan Image Augmentation. Dataset yang dikumpulkan adalah 200 ikan nila dengan masing-masing 100
+    per kelaminnya. Setelah itu, dilakukan augmentasi untuk memperbanyak citra sehingga memiliki total citra di 480 citra. 
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Hasil Pengujian</div>
+  </div>
+
+  <div class="mb-10 text-justify">
+    Pengujian dari 480 citra menggunakan SVM mendapatkan hasil yang cukup baik. Metode ini digunakan karena fitur
+    pada citra dan dapat mengidentifikasi pola 2 kelas data secara optimal berdasarkan analisis ruang fitur. Metode k-fold 
+    cross validation digunakan untuk memvalidasi keakuratan model terhadap variasi dataset.
+    <div class="flex justify-center">
+      <img class="w-3/4" src="/Confusion Matrix.png" alt="Confusion Matrix" />
+    </div>
+
+    Untuk menyamakan presepsi, dilakukan 10-fold stratified cross-validation. Hal ini dilakukan agar tidak terjadi kerancuan dalam
+    dataset. Dari matrix ini dapat disimpulkan tingkat keakuratan yang cukup tinggi dengan kekeliruan sebanyak 14 dari 480 dataset. 
+    Jika dibandingkan dengan metode lain, khususnya KNN didapatkan nilai keakuratan yang lebih baik, namun sistem yang dibuat harus
+    bisa diimplementasikan untuk membaca video bahkan real-time capture dimana metode KNN memberikan respons time yang sangat lambat.
+    Sehingga untuk mencapai respons time real time data yang lebih baik, digunakan metode SVM.
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Demo Klasifikasi Ikan Nila</div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="w-full h-full">
+    <video autoplay muted loop>
+    <source src="/Processed_FIXCEWE11.mp4" />
+    </div>
+
+    <div class="w-full h-full">
+    <video autoplay muted loop>
+    <source src="/Processed_FIXCOWO22.mp4" />
+    
+    </div>
+    <div class="mb-5 text-justify">
+        Video ini menampilkan seekor <b> ikan nila betina </b> dengan prediksi klasifikasi (Kanan Atas). 
+        Dimana sistem dapat memproses sebuah video dan mengonversi menjadi output klasifikasi berdasarkan fitur
+        yang telah dilatih
+    </div>
+    <div class="mb-5 text-justify">
+        Video ini menampilkan seekor <b> ikan nila jantan </b> dengan prediksi klasifikasi (Kanan Atas).
+        Sistem telah melakukan training fitur dan kategori akan mengekspor sebuah model yang dapat digunakan
+        sebagai model dalam melakukan klasifikasi.
+    </div>
+
+  </div>
+  
+</BaseLayout>
