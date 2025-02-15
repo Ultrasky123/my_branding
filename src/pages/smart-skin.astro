@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+---
+
+<BaseLayout sideBarActiveItemID="smart-skin">
+  <div class="mb-5">
+    <div class="text-5xl w-full text-center font-bold">Smart Skin - Pengembangan Kulit Sintetis</div>
+  </div>
+
+  <div class="mb-10 text-justify">
+    Merupakan salah satu pengembangan lanjutan Smart Mannequin, sebuah prototipe yang menggantikan fungsi kenyamanan dan keamanan manusia
+    dengan dipasangkan berbagai jenis sensor untuk mereplika kemampuan manusia semirip mungkin. Smart Mannequin ini merupakan proyek kerjasama
+    dengan PT Pindad dan telah diuji lapangan sebanyak 4x.
+    <br><br>
+    Smart Skin sendiri adalah pengembangan kemampuan indra sentuh manusia menggunakan sensor FSR untuk mendeteksi luka lecet dan tekanan eksternal
+    yang terjadi pada titik-titik yang paling sering terkena benturan pada alat gerak manusia. Smart Skin terdiri dari sebuah sensor tekanan (FSR dan Flex)
+    yang dibalut dengan lateks. Metode pengujian yang dilakukan adalah menggunakan linear regresi untuk menirukan alat ukur digital AMF-500. 
+    Sehingga fungsi minimum dari AMF-500 dapat diaplikasikan di sepanjang alat gerak Smart Mannequin dengan biaya yang rendah dan fleksibilitas yang tinggi.
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Cara Kerja Sistem</div>
+  </div>
+
+  <div class="mb-10 text-justify">
+    Smart Skin menerapkan AI sederhana untuk dapat mengonversi nilai analog menjadi nilai gaya dan tekanan. Kekurangan dari sensor ini adalah nilai maksimum
+    yang dapat diterima adalah 255 karena mengikuti nilai maksimum analog. Data yang dilatih yaitu menggunakan kelipatan 5 untuk masing-masing sensor hingga mencapai
+    titik maksimum analognya. Karena lateks dianggap sebagai kulit manusia karena nilai elastisitas yang dekat, maka nilai inisialisasi dari sensor ketika sudah dibaluti
+    harus berada di titik 0. 
+    <div class="flex justify-center">
+      <img class="w-full" src="/Gambaran Sistem.png" alt="Gambaran Sistem" />
+    </div>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Hasil Pengujian</div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div class="w-1/2 h-1/2 ">
+    <img src="/Mannequin1.jpg">
+  </div>
+  <div class="w-full h-full text-justify">
+  Pengujian terbaru dilakukan di PT Pindad dan Sukawana, Lembang pada 26-28 November 2024. Didapat suatu kesimpulan bahwa bagi manekin
+  jarang terjadi tekanan eksternal dan sensor dapat bertahan dari guncangan terus menerus selama pengujian berlangsung. Tidak terjadi
+  kerusakan pada sensor dan pengiriman data ke monitoring via LoRA berjalan lancar. 
+  </div>
+  </div>
+  <div class="mb-10"></div>
+  <div class="mb-3">
+  <b>Short Video Pengujian di PT Pindad </b> : <a href="https://www.instagram.com/reel/DDqJKg9yZZq/?igsh=b21wbXhuOTc4NGdj">Klik Link Ini (Instagram)</href>
+  </div>
+  <div>
+  <b>Short Video Pengujian di Sukawana </b> : <a href="https://www.instagram.com/reel/DDwMC5hpnjf/?igsh=MW5nY2EyaXgxbHYxag==">Klik Link Ini (Instagram)</href>
+  </div>
+  </div>
+  
+</BaseLayout>
